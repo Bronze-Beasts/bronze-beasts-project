@@ -1,5 +1,5 @@
-const SUPABASE_URL = '';
-const SUPABASE_KEY = '';
+const SUPABASE_URL = 'https://qdniuczcwtzdmgdwzpzk.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFkbml1Y3pjd3R6ZG1nZHd6cHprIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDYwNjk3MDcsImV4cCI6MTk2MTY0NTcwN30.Ej2Isq0jXny54c3_1nKx6Zf0VVXdbuL68BoKgvjXjvE';
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
@@ -15,7 +15,7 @@ export function checkAuth() {
 
 export function redirectIfLoggedIn() {
     if (getUser()) {
-        location.replace('./other-page');
+        location.replace('./break-tracker');
     }
 }
 
