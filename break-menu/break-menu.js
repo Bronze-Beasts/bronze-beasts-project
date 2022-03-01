@@ -1,15 +1,13 @@
-import { createBreak, updateEndTimer, logout, checkAuth } from '../fetch-utils.js';
+import { updateEndTimer, logout, checkAuth } from '../fetch-utils.js';
 
 checkAuth();
 
-window.addEventListener('load', async () => {
-    await createBreak();
-});
+const params = new URLSearchParams(window.location.search);
 
 const endTimer = document.getElementById('endbreak-button');
 
 endTimer.addEventListener('click', async () => {
-    await updateEndTimer(2);
+    await updateEndTimer(params.get('id'));
 }); 
 
 const logoutButton = document.getElementById('logout');

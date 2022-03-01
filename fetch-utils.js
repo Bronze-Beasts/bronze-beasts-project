@@ -11,9 +11,11 @@ export async function updateEndTimer(id) {
 }
 
 export async function createBreak() {
-    const response = await client.from('break-stats').insert({});
+    const response = await client.from('break-stats').insert({}).single();
     return checkError(response);
 }
+
+//we need to fetch params by id at some point
 
 //--------login-------
 export function getUser() {
