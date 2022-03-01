@@ -24,8 +24,16 @@
         <div id="last-break-timer">
             <h2>Time since your last break:</h2>
             <div class="timer">
-                <!-- timer code -->
+                <div id="stopwatch">
+                    00:00:00
+                </div>
+                <ul id="buttons">
+                    <li><button id="start-timer">Start</button></li>
+                    <li><button id="stop-timer">Stop</button></li>
+                    <!-- <li><button onclick="resetTimer()">Reset</button></li> -->
+                </ul>
             </div>
+
         </div>
         <button id="new-break">Take a break</button>
         <button id="new-error">Have an Error?</button>
