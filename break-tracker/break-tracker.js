@@ -19,7 +19,7 @@ logoutButton.addEventListener('click', async () => {
     await logout();
 });
 
-const timer = document.getElementById('stopwatch');
+// const timer = document.getElementById('stopwatch');
 
 window.onload = function() {
 
@@ -88,4 +88,48 @@ window.onload = function() {
     
 };
 
+let errorButton = document.getElementById('new-error');
 
+errorButton.addEventListener('click', ()=> {
+    errorButton.disabled = true;
+    errorTimerStart();
+    
+});
+
+function errorTimerStart() {
+
+    let min = 15;
+    let sec = 0;
+
+    let appendErrorMin = document.getElementById('errorMinutes');
+    let appendErrorSec = document.getElementById('errorSeconds');
+    let interval;
+
+    clearInterval(interval);
+    interval = setInterval(updateTimer, 250);
+
+    function updateTimer() {
+        sec--;
+        if (sec < 0){
+            sec = 59;
+            min--;
+            // appendErrorSec.innerHTML = sec;
+            appendErrorMin.innerHTML = min;
+        }
+        if (sec >= 10){
+            appendErrorSec.innerHTML = sec;
+        }
+        if (sec <= 9){
+            appendErrorSec.innerHTML = '0' + sec;
+        }
+        if (min <= 9) {
+            appendErrorMin.innerHTML = '0' + min;
+        }
+        if ((sec === 0) && (min === 0)) {
+            clearInterval(interval);
+            errorButton.disabled = false;
+
+        }
+    }
+
+}
