@@ -8,6 +8,7 @@ const endTimer = document.getElementById('endbreak-button');
 
 endTimer.addEventListener('click', async () => {
     await updateEndTimer(params.get('id'));
+    location.replace('/break-tracker');
 }); 
 
 const logoutButton = document.getElementById('logout');
