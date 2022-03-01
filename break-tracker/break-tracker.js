@@ -91,7 +91,9 @@ window.onload = function() {
 let errorButton = document.getElementById('new-error');
 
 errorButton.addEventListener('click', ()=> {
+    errorButton.disabled = true;
     errorTimerStart();
+    
 });
 
 function errorTimerStart() {
@@ -104,27 +106,29 @@ function errorTimerStart() {
     let interval;
 
     clearInterval(interval);
-    interval = setInterval(updateTimer, 1000);
+    interval = setInterval(updateTimer, 250);
 
     function updateTimer() {
         sec--;
         if (sec < 0){
             sec = 59;
             min--;
-            appendErrorSec.innerHTML = sec;
+            // appendErrorSec.innerHTML = sec;
             appendErrorMin.innerHTML = min;
         }
-        if (sec <= 9){
-            appendErrorSec = '0' + sec;
-        }
-        if (sec > 9){
+        if (sec >= 10){
             appendErrorSec.innerHTML = sec;
+        }
+        if (sec <= 9){
+            appendErrorSec.innerHTML = '0' + sec;
         }
         if (min <= 9) {
             appendErrorMin.innerHTML = '0' + min;
         }
         if ((sec === 0) && (min === 0)) {
             clearInterval(interval);
+            errorButton.disabled = false;
+
         }
     }
 
