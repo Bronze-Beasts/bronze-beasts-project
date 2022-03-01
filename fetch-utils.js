@@ -4,12 +4,18 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 
+//hope this works for the timer
+export async function updateEndTimer(id) {
+    const response = await client.from('break-stats').update({ end_time: new Date() }).match({ id });
+    return checkError(response);
+}
+
 export async function createBreak() {
     const response = await client.from('break-stats').insert({});
     return checkError(response);
 }
 
-
+//--------login-------
 export function getUser() {
     return client.auth.session() && client.auth.session().user;
 }
