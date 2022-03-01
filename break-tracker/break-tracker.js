@@ -20,63 +20,72 @@ logoutButton.addEventListener('click', async () => {
 });
 
 const timer = document.getElementById('stopwatch');
-const startTimer = document.getElementById('start-timer');
-const stopTimer = document.getElementById('stop-timer');
 
+window.onload = function() {
 
-let hr = 0;
-let min = 0;
-let sec = 0;
-let stoptime = true;
+    let hr = 0;
+    let min = 0;
+    let sec = 0;
+    
+    let appendSec = document.getElementById('seconds');
+    let appendMin = document.getElementById('minutes');
+    let appendHr = document.getElementById('hours');
+    
+    let startButton = document.getElementById('start-timer');
+    let stopButton = document.getElementById('stop-timer');
+    let interval;
+    
+    startButton.onclick = function() {
+        clearInterval(interval);
+        interval = setInterval(updateTimer, 1000);
+    };
 
-startTimer.addEventListener('click', () => {
-    if (stoptime === true) {
-        stoptime = false;
-        timerCycle();
-    }
+    stopButton.onclick = function() {
+        clearInterval(interval);
+    };
 
-});
-
-stopTimer.addEventListener('click', () => {
-    if (stoptime === false) {
-        stoptime = true;
-    }
-});
-
-function timerCycle() {
-    if (stoptime === false) {
-        sec = parseInt(sec);
-        min = parseInt(min);
-        hr = parseInt(hr);
-        
-        sec = sec + 1;
-
-        if (sec === 60) {
-            min = min + 1;
-            sec = 0;
+    function updateTimer() {
+        sec++;
+        if (sec <= 9){
+            appendSec.innerHTML = '0' + sec;
         }
-        if (min === 60) {
-            hr = hr + 1;
+
+        if (sec > 9){
+            appendSec.innerHTML = sec;
+        }
+
+        if (sec > 59){
+            min++;
+            appendMin.innerHTML = '0' + min;
+            sec = 0;
+            appendSec.innerHTML = '0' + 0;
+        }
+
+        if (min <= 9){
+            appendMin.innerHTML = '0' + min;
+        }
+
+        if (min > 9){
+            appendMin.innerHTML = min;
+        }
+
+        if (min > 59){
+            hr++;
+            appendHr.innerHTML = '0' + hr;
             min = 0;
-            sec = 0;
+            appendMin.innerHTML = '0' + 0;
         }
 
-        if (sec < 10 || sec === 0) {
-            sec = '0' + sec;
+        if (hr <= 9){
+            appendHr.innerHTML = '0' + hr;
         }
-        if (min < 10 || min === 0) {
-            min = '0' + min;
+
+        if (hr > 9){
+            appendHr.innerHTML = hr;
         }
-        if (hr < 10 || hr === 0) {
-            hr = '0' + hr;
-        }
-        
-        timer.innerHTML = hr + ':' + min + ':' + sec;
-        
-        setTimeout('timerCycle()', 1000);
+
     }
-}
+    
+};
 
-// function resetTimer() {
-//     timer.innerHTML = '00:00:00';
-// }
+
