@@ -33,6 +33,13 @@ export async function getBreakOptions() {
     return checkError(response);
 }
 
+export async function getBreakInfo(id) {
+    const response = await client.from('options').select('*').eq('id', id).single();
+    // console.log(response);
+    return checkError(response);
+}
+
+
 //we need to fetch params by id at some point
 
 //--------login-------
