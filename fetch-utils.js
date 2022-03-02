@@ -15,6 +15,24 @@ export async function createBreak() {
     return checkError(response);
 }
 
+export async function getTodaysBreaks() {
+
+    const dayStart = new Date();
+    dayStart.setHours(0, 0, 0, 0);
+    
+    const dayEnd = new Date();
+    dayEnd.setHours(24, 0, 0, 0);
+
+    const response = await client.from('break-stats').select('*').lt('end_time', dayEnd.toISOString()).gt('start_time', dayStart.toISOString());
+    console.log(response);
+    return response;
+}
+
+export async function getBreakOptions() {
+    const response = await client.from('options').select('*');
+    return checkError(response);
+}
+
 //we need to fetch params by id at some point
 
 //--------login-------

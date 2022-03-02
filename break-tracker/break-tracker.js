@@ -3,6 +3,7 @@ import { logout, checkAuth, createBreak } from '../fetch-utils.js';
 checkAuth();
 
 const newBreak = document.getElementById('new-break');
+const errorAlarm = new Audio ('assets/choir.wav');
 
 newBreak.addEventListener('click', async () => {
     const response = await createBreak();
@@ -21,65 +22,65 @@ logoutButton.addEventListener('click', async () => {
 
 window.onload = function() {
 
-function breakTimerStart() {
-    let hr = 0;
-    let min = 0;
-    let sec = 0;
+    function breakTimerStart() {
+        let hr = 0;
+        let min = 0;
+        let sec = 0;
     
-    let appendSec = document.getElementById('seconds');
-    let appendMin = document.getElementById('minutes');
-    let appendHr = document.getElementById('hours');
+        let appendSec = document.getElementById('seconds');
+        let appendMin = document.getElementById('minutes');
+        let appendHr = document.getElementById('hours');
     
-    let interval;
+        let interval;
     
-    startButton.onclick = function() {
-        clearInterval(interval);
-        interval = setInterval(updateTimer, 1000);
-    };
+        startButton.onclick = function() {
+            clearInterval(interval);
+            interval = setInterval(updateTimer, 1000);
+        };
 
-    function updateTimer() {
-        sec++;
-        if (sec <= 9){
-            appendSec.innerHTML = '0' + sec;
+        function updateTimer() {
+            sec++;
+            if (sec <= 9){
+                appendSec.innerHTML = '0' + sec;
+            }
+
+            if (sec > 9){
+                appendSec.innerHTML = sec;
+            }
+
+            if (sec > 59){
+                min++;
+                appendMin.innerHTML = '0' + min;
+                sec = 0;
+                appendSec.innerHTML = '0' + 0;
+            }
+
+            if (min <= 9){
+                appendMin.innerHTML = '0' + min;
+            }
+
+            if (min > 9){
+                appendMin.innerHTML = min;
+            }
+
+            if (min > 59){
+                hr++;
+                appendHr.innerHTML = '0' + hr;
+                min = 0;
+                appendMin.innerHTML = '0' + 0;
+            }
+
+            if (hr <= 9){
+                appendHr.innerHTML = '0' + hr;
+            }
+
+            if (hr > 9){
+                appendHr.innerHTML = hr;
+            }
+
         }
-
-        if (sec > 9){
-            appendSec.innerHTML = sec;
-        }
-
-        if (sec > 59){
-            min++;
-            appendMin.innerHTML = '0' + min;
-            sec = 0;
-            appendSec.innerHTML = '0' + 0;
-        }
-
-        if (min <= 9){
-            appendMin.innerHTML = '0' + min;
-        }
-
-        if (min > 9){
-            appendMin.innerHTML = min;
-        }
-
-        if (min > 59){
-            hr++;
-            appendHr.innerHTML = '0' + hr;
-            min = 0;
-            appendMin.innerHTML = '0' + 0;
-        }
-
-        if (hr <= 9){
-            appendHr.innerHTML = '0' + hr;
-        }
-
-        if (hr > 9){
-            appendHr.innerHTML = hr;
-        }
-
-    }
     
-};
+    }};
 
 let errorButton = document.getElementById('new-error');
 
@@ -121,8 +122,8 @@ function errorTimerStart() {
         if ((sec === 0) && (min === 0)) {
             clearInterval(interval);
             errorButton.disabled = false;
-
+            errorAlarm.play;
+            errorAlarm = false;
         }
     }
-
 }
