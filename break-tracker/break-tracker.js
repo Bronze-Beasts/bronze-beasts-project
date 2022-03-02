@@ -8,7 +8,9 @@ const breakStats = document.getElementById('breakstats-button');
 const tannerError = new Audio('/assets/error.m4a');
 const tannerBreak = new Audio('/assets/break.m4a');
 
+const breakTimeMinutes = 30; 
 
+setInterval(function() { tannerBreak.play(); }, breakTimeMinutes * 60 * 1000);
 
 breakStats.addEventListener('click', () => {
     window.location.replace('/break-stats');
@@ -44,9 +46,7 @@ function breakTimerStart() {
     let appendMin = document.getElementById('minutes');
     let appendHr = document.getElementById('hours');
     
-    let interval;
-    
-    interval = setInterval(updateTimer, 1000);
+    setInterval(updateTimer, 1000);
 
     function updateTimer() {
         sec++;
