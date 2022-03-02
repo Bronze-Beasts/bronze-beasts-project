@@ -29,7 +29,6 @@ window.onload = function() {
     
     breakTimerStart();
     
-    console.log('bunny');
 };
 
 function breakTimerStart() {
