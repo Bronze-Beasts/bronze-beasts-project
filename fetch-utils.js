@@ -15,6 +15,12 @@ export async function createBreak() {
     return checkError(response);
 }
 
+export async function getTodaysBreaks(date) {
+    const response = await client.from('break-stats').select('*');
+    console.log(response);
+    return response;
+}
+
 //we need to fetch params by id at some point
 
 //--------login-------

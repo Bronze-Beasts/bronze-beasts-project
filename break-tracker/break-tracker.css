@@ -10,11 +10,15 @@ button {
     outline: none;
 }
 
-#stopwatch {
+.timer {
     font-size: 3rem;
 }
 
 #buttons li {
     display: inline;
     padding-left: 10px;
+}
+
+.hidden {
+    display: none;
 }
