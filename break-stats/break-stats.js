@@ -30,5 +30,5 @@ window.addEventListener('load', async () => {
         totalTime += (((endTime - startTime) / 1000) / 60);
     
     }
-    totalBreakTime.textContent = `~${ Math.ceil(totalTime) }`;
+    totalBreakTime.textContent = `${ Math.ceil(totalTime) }`;
 });

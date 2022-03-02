@@ -25,21 +25,12 @@ logoutButton.addEventListener('click', async () => {
     await logout();
 });
 
-// const timer = document.getElementById('stopwatch');
-
 window.onload = function() {
     
     breakTimerStart();
     
     
 };
-
-// const breakTimer = {
-//     hr: 0,
-//     min: 0,
-//     sec: 0,
-
-// };
 
 function breakTimerStart() {
     let hr = 0;
@@ -50,20 +41,9 @@ function breakTimerStart() {
     let appendMin = document.getElementById('minutes');
     let appendHr = document.getElementById('hours');
     
-    let startButton = document.getElementById('start-timer');
-    let stopButton = document.getElementById('stop-timer');
     let interval;
     
     interval = setInterval(updateTimer, 1000);
-
-    // startButton.onclick = function() {
-    //     clearInterval(interval);
-    //     interval = setInterval(updateTimer, 1000);
-    // };
-
-    // stopButton.onclick = function() {
-    //     clearInterval(interval);
-    // };
 
     function updateTimer() {
         sec++;
