@@ -27,10 +27,8 @@ logoutButton.addEventListener('click', async () => {
 
 window.onload = function() {
     
-    console.log('word');
     breakTimerStart();
     
-    console.log('bunny');
 };
 
 function breakTimerStart() {
