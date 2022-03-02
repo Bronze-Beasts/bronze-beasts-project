@@ -5,6 +5,7 @@ checkAuth();
 const newBreak = document.getElementById('new-break');
 const errorTimer = document.getElementById('error-timer');
 const breakStats = document.getElementById('breakstats-button');
+
 const tannerError = new Audio('/assets/error.m4a');
 const tannerBreak = new Audio('/assets/break.m4a');
 
