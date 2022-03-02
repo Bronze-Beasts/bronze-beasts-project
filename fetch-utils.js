@@ -28,6 +28,11 @@ export async function getTodaysBreaks() {
     return response;
 }
 
+export async function getBreakOptions() {
+    const response = await client.from('options').select('*');
+    return checkError(response);
+}
+
 //we need to fetch params by id at some point
 
 //--------login-------
