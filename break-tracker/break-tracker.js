@@ -106,7 +106,7 @@ function errorTimerStart() {
     let interval;
 
     clearInterval(interval);
-    interval = setInterval(updateTimer, 250);
+    interval = setInterval(updateTimer, 50);
 
     function updateTimer() {
         sec--;
