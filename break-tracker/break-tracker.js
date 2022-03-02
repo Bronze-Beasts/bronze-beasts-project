@@ -1,4 +1,4 @@
-import { logout, checkAuth, createBreak } from '../fetch-utils.js';
+import { logout, checkAuth, createBreak, getAdvice } from '../fetch-utils.js';
 
 checkAuth();
 
@@ -95,7 +95,9 @@ function breakTimerStart() {
 
 let errorButton = document.getElementById('new-error');
 
-errorButton.addEventListener('click', ()=> {
+errorButton.addEventListener('click', async ()=> {
+    const adviceList = await getAdvice();
+    // errorButton.
     errorButton.disabled = true;
     errorTimer.classList.remove('hidden');
     errorTimerStart();

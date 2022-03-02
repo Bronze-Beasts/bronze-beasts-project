@@ -1,3 +1,15 @@
+export function renderAdvice(advice) {
+    const adviceDiv = document.createElement('div');
+    adviceDiv.classList.add('advice');
+
+    const p = document.createElement('p');
+    p.classList.add('desc');
+    p.textContent = (advice.quote);
+
+    adviceDiv.append(p);
+    return adviceDiv;
+}
+
 export function renderMenu(object){
     const optionDiv = document.createElement('div');
     optionDiv.classList.add('break-option');
