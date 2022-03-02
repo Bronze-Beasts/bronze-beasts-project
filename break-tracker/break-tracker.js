@@ -6,6 +6,13 @@ const newBreak = document.getElementById('new-break');
 const errorTimer = document.getElementById('error-timer');
 const breakStats = document.getElementById('breakstats-button');
 
+const tannerError = new Audio('/assets/error.m4a');
+const tannerBreak = new Audio('/assets/break.m4a');
+
+const breakTimeMinutes = 30; 
+
+setInterval(function() { tannerBreak.play(); }, breakTimeMinutes * 60 * 1000);
+
 breakStats.addEventListener('click', () => {
     window.location.replace('/break-stats');
 });
@@ -29,7 +36,6 @@ window.onload = function() {
     
     breakTimerStart();
     
-    
 };
 
 function breakTimerStart() {
@@ -41,7 +47,7 @@ function breakTimerStart() {
     let appendMin = document.getElementById('minutes');
     let appendHr = document.getElementById('hours');
     
-    
+
     setInterval(updateTimer, 1000);
 
     function updateTimer() {
@@ -98,8 +104,8 @@ errorButton.addEventListener('click', ()=> {
 
 function errorTimerStart() {
 
-    let min = 15;
-    let sec = 0;
+    let min = 0;
+    let sec = 10;
 
     let appendErrorMin = document.getElementById('errorMinutes');
     let appendErrorSec = document.getElementById('errorSeconds');
@@ -128,7 +134,7 @@ function errorTimerStart() {
         if ((sec === 0) && (min === 0)) {
             clearInterval(interval);
             errorButton.disabled = false;
-
+            tannerError.play();
         }
     }
 
