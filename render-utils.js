@@ -15,9 +15,30 @@ export function renderMenu(object){
     p.textContent = `Duration: ${object.duration} min`;
 
     const a = document.createElement('a');
-    a.href = `./break-info/?id=${object.id}`;
+    a.href = `/break-info/?id=${object.id}`;
 
     optionDiv.append(h3, img, p);
     a.append(optionDiv);
     return a;
+}
+
+export function renderMenuInfo(info) {
+    const activitiesDiv = document.createElement('div');
+    activitiesDiv.classList.add('activities-div');
+    
+    const h1 = document.createElement('h1');
+    h1.classList.add('activity-title');
+    h1.textContent = info.title;
+
+    const video = document.createElement('iframe');
+    video.classList.add('activity-video');
+    video.src = info.source;
+
+    const descriptionP = document.createElement('p');
+    descriptionP.classList.add('activity-description');
+    descriptionP.textContent = info.description;
+
+    activitiesDiv.append(h1, video, descriptionP);
+    return activitiesDiv;
+
 }

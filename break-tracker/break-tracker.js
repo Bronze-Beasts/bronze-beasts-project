@@ -47,6 +47,7 @@ function breakTimerStart() {
     let appendMin = document.getElementById('minutes');
     let appendHr = document.getElementById('hours');
     
+
     setInterval(updateTimer, 1000);
 
     function updateTimer() {
