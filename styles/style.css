@@ -9,17 +9,38 @@ body {
 
     font-family: 'Monda', Sans-Serif;
     font-size: 16px;
-    background-color: var(--powderBlue);
+    background-color: white;
     
     display: flex;
     flex-direction: column;
     align-items: center;
 
 }
+
+@media only screen and (max-width: 600px) {
+    /* body {
+        width:100vw;
+    } */
+    .app-container {
+        width: 100%;
+    }
+  }
+  
+.app-container {
+    max-width: 500px;
+    /* width: 500px; */
+    width: 500px;
+}
+
+
+  
+
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--powderBlue);
+    height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -27,12 +48,17 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 45px;
 }
 
+h1 {
+    padding: 0 10px 0 10px;
+}
+
+
 .button {
     width: 100px;
     height: 30px;
     border: 3px soldi white;
     border-radius: 50px;
-    background: var(--darkBlue);
+    background: var(--black);
     color: white;
     cursor: pointer;
     outline: none;
@@ -52,4 +78,11 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: row;
     align-items: center;
 
+}
+
+header {
+    background-color: var(--powderBlue);
+    /* max-width: 450px; */
+    display: flex;
+    justify-content: center;
 }

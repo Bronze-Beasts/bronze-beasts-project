@@ -15,30 +15,33 @@
 </head>
 
 <body>
-    <header>
-        <button class="button" id="logout">Logout</button>
-        <button class="button" id="breakstats-button">Break Stats</button>
-    </header>
-    <main>
-        <h1>Break Tracker</h1>
-        <div id="last-break-timer">
-            <p id="break-phrase">Time since your last break:</p>
-            <div class="timer">
-                <div id="stopwatch">
-                    <p><span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span></p>
+    <div class="app-container">
+        <header>
+            <button class="button" id="logout">Logout</button>
+            <button class="button" id="breakstats-button">Break Stats</button>
+        </header>
+        <main>
+            <h1>Break Tracker</h1>
+            <div id="last-break-timer">
+                <p id="break-phrase">Time since your last break:</p>
+                <div class="timer">
+                    <!-- <div id="stopwatch"> -->
+                        <p><span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span></p>
+                    <!-- </div> -->
                 </div>
+    
             </div>
-
-        </div>
-        <button class="app-button" id="new-error">Have an Error?</button>
-
-        <div class="error-timer timer hidden" id="error-timer">
-            <p><span id="errorMinutes">15</span>:<span id="errorSeconds">00</span></p>
+            <button class="app-button" id="new-error">Have an Error?</button>
+    
+            <div class="error-timer timer hidden" id="error-timer">
+                <p><span id="errorMinutes">15</span>:<span id="errorSeconds">00</span></p>
+            </div>
             <div id="advice-section"></div>
-        </div>
-        
-        <button class="app-button" id="new-break">Take a break</button>
-    </main>
+            
+            <button class="app-button" id="new-break">Take a break</button>
+        </main>
+    </div>
+    
     <script type="module" src="./break-tracker.js"></script>
 </body>
 

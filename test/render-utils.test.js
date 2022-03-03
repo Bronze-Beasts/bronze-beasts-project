@@ -1,7 +1,27 @@
 // IMPORT MODULES under test here:
-import { renderMenu, renderMenuInfo } from '../render-utils.js';
+import { renderMenu, renderMenuInfo, renderAdvice } from '../render-utils.js';
 
 const test = QUnit.test;
+
+
+
+test('renderAdvice should render a div with advice', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const expected = `<div class="advice"><p class="desc">The sky is blue <br>- Aidan</p></div>`;
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = renderAdvice({
+        id: '1',
+        name: 'Aidan',
+        quote: 'The sky is blue',
+    });
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual.outerHTML, expected);
+});
 
 test('time to test break menu render function', (expect) => {
     //Arrange

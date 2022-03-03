@@ -1,7 +1,13 @@
+main {
+    /* max-width: 450px; */
+    /* hello there */
+}
+
 .app-button {
-    width: 70vw;
-    height: 30vw;
-    border: 3px soldi white;
+    max-width: 400px;
+    width: 75%;
+    height: 150px;
+    border: 2px solid black;
     border-radius: 25px;
     background: var(--darkBlue);
     color: white;
@@ -14,14 +20,15 @@
 
 #new-break {
     background-color: var(--tealBlue);
+    max-width: 400px;
 }
 
 #advice-section {
     font-size: 1rem;
     border: 1px solid black;
-    background-color: teal;
-    width: 65vw;
-    border-radius: 10px 100px / 120px;
+    background-color: rgb(255, 255, 255, 0.8);
+    /* opacity: 0.5; */
+    width: 90%;
 }
 
 #last-break-timer {
@@ -29,6 +36,7 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 10px;
+    /* width: 55%; */
 }
 
 #break-phrase {
@@ -47,7 +55,18 @@ h2 {
 
 .timer {
     font-size: 3rem;
+    width: 5em;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
+/* 
+#error-timer {
+    width: 55%;
+} */
 
 #buttons li {
     display: inline;
