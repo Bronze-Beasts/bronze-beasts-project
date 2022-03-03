@@ -22,20 +22,28 @@ a:visited{
 }
 
 .break-option {
+    height: 200px;
 
 }
 .title {
     grid-area: title;
     font-size: 1.1rem;
     text-align: center; 
-
+    display: flex;
+    justify-content: center;
+    height: 30%;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    align-content: flex-end;
 }
 .img { 
     grid-area: img; 
+    height: 60%;
 }
 .duration { 
     grid-area: duration; 
     margin: 0;
+    height: 10%;
 }
 
 h3 {
