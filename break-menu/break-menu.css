@@ -8,12 +8,17 @@ main {
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: flex-start;
-    /* padding: 10px; */
+    padding: 10px;
 }
 a {
-    width: 50%;
+    width: 49%;
     color: black;
+    border: black 1px solid;
     text-decoration: none;
+}
+
+a:hover {
+    background-color: azure;
 }
 
 a:visited{
@@ -22,20 +27,32 @@ a:visited{
 }
 
 .break-option {
-
+    display: flex;
+    height: 250px;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
 }
-.title {
-    grid-area: title;
-    font-size: 1.1rem;
-    text-align: center; 
 
+.title {
+    padding-right: 3px;
+    padding-left: 3px;
+    font-size: 1.1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 30%;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    align-content: flex-end;
 }
 .img { 
-    grid-area: img; 
+    height: 60%;
 }
 .duration { 
-    grid-area: duration; 
+    font-style: italic;
     margin: 0;
+    height: 10%;
 }
 
 h3 {
