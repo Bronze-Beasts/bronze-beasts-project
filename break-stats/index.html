@@ -15,27 +15,30 @@
 </head>
 
 <body>
-    <header>
-        <button class="button" id="logout">Logout</button>
-        <button class="button" id="breaktracker-button">Break Tracker</button>
-    </header>
+    <div class="app-container">
 
-    <main>
-        <h1>Today's Break Stats</h1>
-
-        <div>
-            <div id="total-break-time" class="data-box">
-            </div>
-            <p>minutes of break</p>
+        <header>
+            <button class="button" id="logout">Logout</button>
+            <button class="button" id="breaktracker-button">Break Tracker</button>
+        </header>
+        
+        <main>
+            <h1>Today's Break Stats</h1>
+            
+            <div>
+                <div id="total-break-time" class="data-box timer">
+                </div>
+                <p>minutes of break</p>
         </div>
-    
+        
         <div>
-            <div id="total-num-breaks" class="data-box">
+            <div id="total-num-breaks" class="data-box timer">
             </div>
             <p>total breaks taken</p>
         </div>
     </main>
     <script type="module" src="./break-stats.js"></script>
+</div>
 </body>
 
 </html>
