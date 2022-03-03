@@ -22,6 +22,7 @@ main {
     align-items: center;
     background-color: var(--powderBlue);
     height: 100vh;
+    max-width: 450px;
 }
 
 h1, h2, h3, h4, h5, h6 {
