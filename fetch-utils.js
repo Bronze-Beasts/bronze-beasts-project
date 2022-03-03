@@ -39,7 +39,13 @@ export async function getBreakInfo(id) {
     return checkError(response);
 }
 
+export async function getAdvice() {
+    const response = await client.from('advice').select('*');
 
+    // console.log(response);
+    return checkError(response);
+}
+getAdvice();
 //we need to fetch params by id at some point
 
 //--------login-------
