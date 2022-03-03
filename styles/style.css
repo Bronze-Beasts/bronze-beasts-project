@@ -9,7 +9,7 @@ body {
 
     font-family: 'Monda', Sans-Serif;
     font-size: 16px;
-    background-color: var(--powderBlue);
+    background-color: white;
     
     display: flex;
     flex-direction: column;
@@ -20,6 +20,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--powderBlue);
+    height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -52,4 +54,11 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: row;
     align-items: center;
 
+}
+
+header {
+    background-color: var(--powderBlue);
+    width: 450px;
+    display: flex;
+    justify-content: center;
 }
