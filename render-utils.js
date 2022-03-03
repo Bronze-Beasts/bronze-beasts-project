@@ -4,7 +4,8 @@ export function renderAdvice(advice) {
 
     const p = document.createElement('p');
     p.classList.add('desc');
-    p.textContent = (advice.quote);
+
+    p.innerHTML = `${ advice.quote } <br>- ${ advice.name }`;
 
     adviceDiv.append(p);
     return adviceDiv;

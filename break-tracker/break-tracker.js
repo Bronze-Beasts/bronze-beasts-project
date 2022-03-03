@@ -1,9 +1,11 @@
 import { logout, checkAuth, createBreak, getAdvice } from '../fetch-utils.js';
+import { renderAdvice } from '../render-utils.js';
 
 checkAuth();
 
 const newBreak = document.getElementById('new-break');
 const errorTimer = document.getElementById('error-timer');
+const adviceSection = document.getElementById('advice-section');
 const breakStats = document.getElementById('breakstats-button');
 
 const tannerError = new Audio('/assets/error.m4a');
@@ -95,9 +97,25 @@ function breakTimerStart() {
 
 let errorButton = document.getElementById('new-error');
 
-errorButton.addEventListener('click', async ()=> {
+async function displayAdvice() {
+    adviceSection.textContent = '';
     const adviceList = await getAdvice();
-    // errorButton.
+    console.log(adviceList);
+    let listLength = adviceList.length;
+    console.log(listLength);
+    let index = Math.floor(Math.random() * listLength);
+    console.log(index);
+
+    const advice = adviceList[index];
+    adviceSection.append(renderAdvice(advice));
+    // renderAdvice(advice);
+}
+
+// displayAdvice();
+
+errorButton.addEventListener('click', async ()=> {
+    displayAdvice();
+    // setInterval(displayAdvice);
     errorButton.disabled = true;
     errorTimer.classList.remove('hidden');
     errorTimerStart();
