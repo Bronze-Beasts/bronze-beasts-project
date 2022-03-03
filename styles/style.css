@@ -86,3 +86,12 @@ header {
     display: flex;
     justify-content: center;
 }
+
+#sign-in {
+    display: flex;
+    flex-direction: column;
+}
+#sign-up {
+    display: flex;
+    flex-direction: column;
+}
