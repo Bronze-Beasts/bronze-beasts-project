@@ -6,32 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Monda" rel="stylesheet">
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/home.css">
-    <title>Document</title>
+    <title>Log-in Page</title>
 </head>
 
 <body>
     <main class="auth-main">
+        <p>Welcome to...</p>
+        <h1>BreakBeast</h1>
+        <img src="/assets/breakbeastlogo.png" id="beast">
         <div class="left">
             <div class="auth-container">
                 <form id="sign-in">
-                    <h3>Sign In</h3>
+                    <h3 id="sign-in-h3">Sign In</h3>
                     <label>Email </label><input type="email" name="email" id="sign-in-email"/>
                     <label>Password </label><input type="password" name="password" id="sign-in-password"/>
-                    <button>Submit</button>
+                    <button class="button">Submit</button>
                 </form>
             </div>
         </div>
         <div class="right">
             <div class="auth-container">
                 <form id='sign-up'>
-                    <h3>Sign Up</h3>
+                    <h3 id="sign-up-h3">Sign Up</h3>
                     <label>Email </label><input type='email' name='email' id="sign-up-email" />
                     <label>Password </label><input type='password' name='password' id="sign-up-password" />
-                    <button>Submit</button>
+                    <button class="button">Submit</button>
                 </form>
             </div>
         </div>

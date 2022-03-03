@@ -1,0 +1,23 @@
+.activities-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+iframe {
+    height: 225px;
+    width: 80%;
+    /* height: auto; */
+}
+
+.activity-title {
+    text-align: center;
+}
+
+.activity-description {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: black 3px solid;
+}
