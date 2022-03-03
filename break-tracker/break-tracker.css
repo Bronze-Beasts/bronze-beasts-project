@@ -1,14 +1,19 @@
 .app-button {
-    width: 50vw;
+    width: 70vw;
     height: 30vw;
     border: 3px soldi white;
-    border-radius: 50px;
-    background: var(--black);
+    border-radius: 25px;
+    background: var(--darkBlue);
     color: white;
     cursor: pointer;
     outline: none;
     font-family: 'Julius Sans One', Sans-Serif;
     font-size: 2em;
+    margin: 5px;
+}
+
+#new-break {
+    background-color: var(--tealBlue);
 }
 
 #advice-section {
@@ -23,6 +28,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 10px;
+}
+
+#break-phrase {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 5px;
 }
 
 h2 {
