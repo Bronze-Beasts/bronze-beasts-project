@@ -11,7 +11,7 @@ const breakStats = document.getElementById('breakstats-button');
 const tannerError = new Audio('/assets/error.m4a');
 const tannerBreak = new Audio('/assets/break.m4a');
 
-const breakTimeMinutes = 30; 
+const breakTimeMinutes = 60; 
 
 setInterval(function() { tannerBreak.play(); }, breakTimeMinutes * 60 * 1000);
 
@@ -124,8 +124,8 @@ errorButton.addEventListener('click', async ()=> {
 
 function errorTimerStart() {
 
-    let min = 0;
-    let sec = 10;
+    let min = 15;
+    let sec = 0;
 
     let appendErrorMin = document.getElementById('errorMinutes');
     let appendErrorSec = document.getElementById('errorSeconds');

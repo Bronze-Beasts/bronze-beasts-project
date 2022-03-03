@@ -1,13 +1,36 @@
-
-button {
-    width: 100px;
-    height: 30px;
+.app-button {
+    width: 50vw;
+    height: 30vw;
     border: 3px soldi white;
     border-radius: 50px;
-    background: #202020;
+    background: var(--black);
     color: white;
     cursor: pointer;
     outline: none;
+    font-family: 'Julius Sans One', Sans-Serif;
+    font-size: 2em;
+}
+
+#advice-section {
+    font-size: 1rem;
+    border: 1px solid black;
+    background-color: teal;
+    width: 65vw;
+    border-radius: 10px 100px / 120px;
+}
+
+#last-break-timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.desc {
+    text-align: center;
 }
 
 .timer {
