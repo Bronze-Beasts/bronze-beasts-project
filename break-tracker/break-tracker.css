@@ -1,10 +1,11 @@
 main {
-    max-width: 450px;
+    /* max-width: 450px; */
     /* hello there */
 }
 
 .app-button {
     max-width: 400px;
+    width: 75%;
     height: 150px;
     border: 2px solid black;
     border-radius: 25px;
@@ -19,6 +20,7 @@ main {
 
 #new-break {
     background-color: var(--tealBlue);
+    max-width: 400px;
 }
 
 #advice-section {
@@ -34,6 +36,7 @@ main {
     flex-direction: column;
     align-items: center;
     margin-bottom: 10px;
+    /* width: 55%; */
 }
 
 #break-phrase {
@@ -52,7 +55,18 @@ h2 {
 
 .timer {
     font-size: 3rem;
+    width: 5em;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
+/* 
+#error-timer {
+    width: 55%;
+} */
 
 #buttons li {
     display: inline;

@@ -16,6 +16,11 @@ body {
     align-items: center;
 
 }
+
+.app-container {
+    max-width: 1000px;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -28,6 +33,11 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Julius Sans One', Sans-Serif;
     font-size: 45px;
 }
+
+h1 {
+    padding: 0 10px 0 10px;
+}
+
 
 .button {
     width: 100px;
