@@ -113,14 +113,39 @@ async function displayAdvice() {
 
 // displayAdvice();
 
-errorButton.addEventListener('click', async ()=> {
+errorButton.addEventListener('click', (gotError));
+let interval;
+
+async function gotError(){  
     displayAdvice();
     // setInterval(displayAdvice);
-    errorButton.disabled = true;
+    errorButton.textContent = 'Fixed your Error?';
     errorTimer.classList.remove('hidden');
+    errorButton.removeEventListener('click', gotError);
+    errorButton.addEventListener('click', fixedError);
     errorTimerStart();
-    
-});
+
+} 
+
+async function fixedError() {
+    errorTimer.classList.add('hidden');
+    errorButton.removeEventListener('click', fixedError);
+    errorButton.addEventListener('click', gotError);
+    errorButton.textContent = 'Have an Error?';
+    adviceSection.textContent = '';
+    resetTimer();
+    clearInterval(interval);
+    console.log('fixed error');
+}
+
+function resetTimer() {
+    let appendErrorMin = document.getElementById('errorMinutes');
+    let appendErrorSec = document.getElementById('errorSeconds');
+
+    appendErrorMin.textContent = '15';
+    appendErrorSec.textContent = '00';
+
+}
 
 function errorTimerStart() {
 
@@ -129,9 +154,7 @@ function errorTimerStart() {
 
     let appendErrorMin = document.getElementById('errorMinutes');
     let appendErrorSec = document.getElementById('errorSeconds');
-    let interval;
-
-    clearInterval(interval);
+    
     interval = setInterval(updateTimer, 1000);
 
     function updateTimer() {
