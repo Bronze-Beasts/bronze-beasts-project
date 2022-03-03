@@ -40,7 +40,7 @@ main {
     flex-direction: column;
     align-items: center;
     background-color: var(--powderBlue);
-    height: 100vh;
+    height: max-content;
 }
 
 h1, h2, h3, h4, h5, h6 {
