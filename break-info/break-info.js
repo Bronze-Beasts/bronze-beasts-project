@@ -1,5 +1,7 @@
-import { getBreakInfo } from '../fetch-utils.js';
+import { checkAuth, getBreakInfo } from '../fetch-utils.js';
 import { renderMenuInfo } from '../render-utils.js';
+
+checkAuth();
 
 const infoDiv = document.getElementById('info');
 
