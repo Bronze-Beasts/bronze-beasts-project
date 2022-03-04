@@ -24,7 +24,6 @@ export async function getTodaysBreaks() {
     dayEnd.setHours(24, 0, 0, 0);
 
     const response = await client.from('break-stats').select('*').lt('end_time', dayEnd.toISOString()).gt('start_time', dayStart.toISOString());
-    console.log(response);
     return response;
 }
 
@@ -35,17 +34,15 @@ export async function getBreakOptions() {
 
 export async function getBreakInfo(id) {
     const response = await client.from('options').select('*').eq('id', id).single();
-    // console.log(response);
     return checkError(response);
 }
 
 export async function getAdvice() {
     const response = await client.from('advice').select('*');
 
-    // console.log(response);
     return checkError(response);
 }
-getAdvice();
+
 //we need to fetch params by id at some point
 
 //--------login-------

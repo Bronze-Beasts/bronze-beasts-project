@@ -15,10 +15,6 @@ logoutButton.addEventListener('click', async () => {
 });
 
 window.addEventListener('load', async () => {
-    const date = new Date();
-
-    console.log(date);
-    
     const breaks = await getTodaysBreaks();
     totalNumBreaks.textContent = `${breaks.data.length}`;
   
@@ -27,10 +23,8 @@ window.addEventListener('load', async () => {
     for (let kitkat of breaks.data){
         const startTime = new Date(kitkat.start_time).getTime();
         const endTime = new Date(kitkat.end_time).getTime();
-        console.log(endTime - startTime);
 
         totalTime += (((endTime - startTime) / 1000) / 60);
-    
     }
     totalBreakTime.textContent = `${ Math.ceil(totalTime) }`;
 });
