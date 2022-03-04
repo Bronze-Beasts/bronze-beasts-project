@@ -17,5 +17,5 @@ displayActivity();
 const returnButton = document.getElementById('return-breakmenu');
 
 returnButton.addEventListener('click', () => {
-    location.replace('../break-menu');
+    history.back();
 });
