@@ -1,26 +1,20 @@
-## The Golden Rule:
+# Project Description:
+BreakBeast is a web application to help Alchemy students manage their time while coding. Without effective time management we often find ourselves not having the rest we need to preform at our best. With BreakBeast we hope to mitigate these problems and help provide alternative breaks to scrolling on your phone. BreakBeast provides a timer to track the time since your last break, a feature to start a 15 min countdown for when you run into errors, as well as break options that include yoga, meditation, and music, and finally a stats page to see your break stats for the day. 
 
-🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
+# Dev Team:
+Alex Orlet (https://github.com/AlexOrlet89), Aidan Liddiard (https://github.com/aidanliddiard), Joshua Stresing (https://github.com/Joshua-Stresing), Cole Rossman (https://github.com/Cole-Rossman), Andrea Cleland (https://github.com/acleland)
 
-If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
+## Images of Tables:
+![Image of our advice table rows and columns.](/assets/advicetable.png)
+![Image of our break stats table rows and columns.](/assets/breakstatstable.png)
+![Image of our options table rows and columns.](/assets/optionstable.png)
+![Image of our auth users table rows and columns.](/assets/authuserstable.png)
 
-## Making a plan
+## Technologies:
 
-1. **Make a drawing of your app. Simple "wireframes"**
-1. **Once you have a drawing, name the HTML elements you'll need to realize your vision**
-1. **For each HTML element ask: Why do I need this?**
-1. **Once we know _why_ we need each element, think about how to implement the "Why" as a "How"**
-1. **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change?**
-1. **Think about how to validate each of your features according to a Definition of Done**
-1. **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
-
-Additional considerations:
-
--   Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
--   Consider your data model.
-    -   What kinds of objects (i.e., Dogs, Friends, Todos, etc) will you need?
-    -   What are the key/value pairs?
-    -   What arrays might you need?
-    -   What needs to live in a persistence layer?
--   Is there some state we need to initialize?
--   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be resused?)
+| Frontend Tech   | Backend Tech    |
+|-----------------|-----------------|
+| HTML            | Supabase        |
+| CSS             |                 |
+| JavaScript      |                 |
+| QUnit           |                 |
