@@ -24,7 +24,6 @@ newBreak.addEventListener('click', async () => {
     const params = new URLSearchParams();
     params.set('id', response.id);
 
-    console.log(response);
     window.location.replace(`/break-menu/?${ params.toString() }`);
 });
 
@@ -100,11 +99,10 @@ let errorButton = document.getElementById('new-error');
 async function displayAdvice() {
     adviceSection.textContent = '';
     const adviceList = await getAdvice();
-    console.log(adviceList);
+   
     let listLength = adviceList.length;
-    console.log(listLength);
+
     let index = Math.floor(Math.random() * listLength);
-    console.log(index);
 
     const advice = adviceList[index];
     adviceSection.append(renderAdvice(advice));
@@ -135,7 +133,6 @@ async function fixedError() {
     adviceSection.textContent = '';
     resetTimer();
     clearInterval(interval);
-    console.log('fixed error');
 }
 
 function resetTimer() {
