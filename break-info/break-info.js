@@ -8,11 +8,11 @@ const infoDiv = document.getElementById('info');
 async function displayActivity() {
     const params = new URLSearchParams(window.location.search);
 
-    const getId = await getBreakInfo(params.get('id'));
+    const activityInfo = await getBreakInfo(params.get('id'));
 
-    const activity = renderMenuInfo(getId);
+    const activityElem = renderMenuInfo(activityInfo);
 
-    infoDiv.append(activity);
+    infoDiv.append(activityElem);
 }
 displayActivity();
 
